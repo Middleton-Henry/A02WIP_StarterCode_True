@@ -42,4 +42,9 @@ public class Mothership {
 
     }
 
+    public String getExperimentSummary(){
+        return experimentModule.getSummary();
+    }
+
+
 }

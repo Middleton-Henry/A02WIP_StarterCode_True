@@ -37,7 +37,6 @@ public class ExperimentModule extends AModule{
         return "Experiment not run yet.";
     }
 
-    @Override
     public void statusReport(String moduleStatus, boolean isSuccessful){
         if(hasRun){
             System.out.println("Experiment Module: " + experimentName + " completed.");

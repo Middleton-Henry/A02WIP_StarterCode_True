@@ -38,11 +38,11 @@ public class FuelGenerator extends AModule implements IPowerGenerator {
 
 
     public void statusReport(String moduleStatus, boolean isSuccessful){
-        System.out.println("FuelGenerator: " + fuel + " units of fuel remaining.");
+        System.out.println("Fuel Generator: " + fuel + " units of fuel remaining.");
         super.statusReport(moduleStatus, isSuccessful);
     }
 
     public void statusReport(){
-        System.out.println("FuelGenerator: " + fuel + " units of fuel remaining.");
+        System.out.println("Fuel Generator: " + fuel + " units of fuel remaining.");
     }
 }
