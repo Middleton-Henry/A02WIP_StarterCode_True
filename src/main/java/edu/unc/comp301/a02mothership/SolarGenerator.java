@@ -2,7 +2,7 @@ package edu.unc.comp301.a02mothership;
 
 public class SolarGenerator extends AModule implements IPowerGenerator {
 
-    SolarGenerator(String name) {
+    public SolarGenerator(String name) {
         super(name);
     }
 
