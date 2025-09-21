@@ -44,22 +44,22 @@ public class ThrusterModule extends AModule {
         if(lastFired){
             lastFiredString = "Yes";
         }
+        //Ex: Thruster Module: 100 units of fuel remaining. Last fired: No
+        System.out.println("Thruster Module: " + fuel + " units of fuel remaining. Last fired: " + lastFiredString);
 
-        System.out.println("ThrusterModule: " + fuel + " units of fuel remaining. Last fired: " + lastFiredString);
-
-        //Ex: ThrusterModule: 80 units of fuel remaining. Last fired: Yes
     }
 
     public boolean thrust(int availablePower){
         if(fuel >= 5 && availablePower >= 5){
             fuel -= 5;
             lastFired = true;
-            System.out.println("ALERT Captain: 5 fuel used for propulsion maneuver.");
+            //Ex: Thruster Module: 95 units of fuel remaining.
+            System.out.println("Thruster Module: " + fuel + " units of fuel remaining.");
             return true;
         }
 
         lastFired = false;
-        System.out.println("ThrusterModule: Not enough power or fuel to fire.");
+        System.out.println("Thruster Module: Not enough power or fuel to fire.");
         return false;
     }
 }
