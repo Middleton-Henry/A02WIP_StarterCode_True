@@ -13,6 +13,10 @@ public class Mothership {
         this.powerGenerator = powerGenerator;
         this.thrusterModule = thrusterModule;
         this.experimentModule = experimentModule;
+
+        moduleArrayList.add(powerGenerator);
+        moduleArrayList.add(thrusterModule);
+        moduleArrayList.add(experimentModule);
     }
 
     public int requestPower(){

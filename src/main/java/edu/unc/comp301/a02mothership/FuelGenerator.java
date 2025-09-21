@@ -3,16 +3,17 @@ package edu.unc.comp301.a02mothership;
 public class FuelGenerator extends AModule implements IPowerGenerator {
     private int fuel;
 
-    FuelGenerator(String name){
+    public FuelGenerator(String name){
         super(name);
         fuel = 0;
     }
 
-    FuelGenerator(String name, int fuel){
+    public FuelGenerator(String name, int fuel){
         super(name);
         this.fuel = fuel;
     }
 
+    @Override
     public int GeneratePower() {
         if(fuel >= 10){
             fuel -= 10;
@@ -25,6 +26,7 @@ public class FuelGenerator extends AModule implements IPowerGenerator {
         return remainingFuel;
     }
 
+    @Override
     public void statusReport(String moduleStatus, boolean isSuccessful){
         System.out.println("FuelGenerator: " + fuel + " units of fuel remaining.");
         super.statusReport(moduleStatus, isSuccessful);

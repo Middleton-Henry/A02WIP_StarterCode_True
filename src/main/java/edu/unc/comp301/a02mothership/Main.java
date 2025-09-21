@@ -25,7 +25,7 @@ public class Main {
         }
 
         mothership.runExperiment();
-        System.out.println("Experiment Summary: " + mothership.getExperimentModule().getSummary());
+        System.out.println("Experiment Summary: " + experimentModule.getSummary());
 
         mothership.printStatusReports();
     }

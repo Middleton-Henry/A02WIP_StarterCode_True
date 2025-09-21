@@ -4,14 +4,22 @@ package edu.unc.comp301.a02mothership;
 
 public class ThrusterModule extends AModule {
 
-    private int fuel = 100;
-    private boolean lastFired = false;
+    private int fuel;
+    private boolean lastFired;
 
-    ThrusterModule(String name) {
+    public ThrusterModule(String name) {
         super(name);
+        fuel = 100;
+        lastFired = false;
     }
 
-    ThrusterModule(String name, int fuel, boolean lastFired) {
+    public ThrusterModule() {
+        super("Thruster Module");
+        fuel = 100;
+        lastFired = false;
+    }
+
+    public ThrusterModule(String name, int fuel, boolean lastFired) {
         super(name);
         this.fuel = fuel;
         this.lastFired = lastFired;
@@ -23,6 +31,12 @@ public class ThrusterModule extends AModule {
 
     public boolean lastFired(){
         return lastFired;
+    }
+
+    @Override
+    public void statusReport(String moduleStatus, boolean isSuccessful){
+        statusReport();
+        super.statusReport(moduleStatus, isSuccessful);
     }
 
     public void statusReport(){
@@ -38,7 +52,7 @@ public class ThrusterModule extends AModule {
 
     public boolean thrust(int availablePower){
         if(fuel >= 5 && availablePower >= 5){
-            fuel -=5;
+            fuel -= 5;
             lastFired = true;
             System.out.println("ALERT Captain: 5 fuel used for propulsion maneuver.");
             return true;

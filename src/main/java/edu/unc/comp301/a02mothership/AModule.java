@@ -3,7 +3,7 @@ package edu.unc.comp301.a02mothership;
 public abstract class AModule implements IModule {
   private String name;
 
-  AModule(String name) {
+  public AModule(String name) {
     this.name = name;
   }
 
@@ -12,7 +12,7 @@ public abstract class AModule implements IModule {
   }
 
   public void statusReport(String moduleStatus, boolean isSuccessful) {
-    System.out.println(name + " " + moduleStatus);
+    System.out.println(name + " is " + moduleStatus + "...");
     if (isSuccessful) {
       System.out.println("Action Successful.");
     } else {

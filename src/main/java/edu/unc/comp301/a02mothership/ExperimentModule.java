@@ -1,12 +1,21 @@
 package edu.unc.comp301.a02mothership;
 
-public class ExperimentModule {
+public class ExperimentModule extends AModule{
     private String experimentName;
     private double[] parameters;
     private double result;
     private boolean hasRun;
 
-    ExperimentModule(String experimentName, double[] parameters){
+    public ExperimentModule(String experimentName, double[] parameters){
+        super("Experiment Module");
+        this.experimentName = experimentName;
+        this.parameters = parameters;
+        result = 0;
+        hasRun = false;
+    }
+
+    public ExperimentModule(String moduleName, String experimentName, double[] parameters){
+        super(moduleName);
         this.experimentName = experimentName;
         this.parameters = parameters;
         result = 0;
@@ -28,6 +37,7 @@ public class ExperimentModule {
         return "Experiment not run yet.";
     }
 
+    @Override
     public void statusReport(String moduleStatus, boolean isSuccessful){
         if(hasRun){
             System.out.println("ExperimentModule: " + experimentName + " completed.");
@@ -35,6 +45,7 @@ public class ExperimentModule {
         else{
             System.out.println("ExperimentModule: " + experimentName + " pending.");
         }
+        super.statusReport(moduleStatus, isSuccessful);
     }
 
 }
