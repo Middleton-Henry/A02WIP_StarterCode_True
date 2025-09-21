@@ -13,6 +13,9 @@ public class SolarGenerator extends AModule implements IPowerGenerator {
     public int GeneratePower() {
         return 10;
     }
+    public int generatePower() {
+        return 10;
+    }
 
 
     public void statusReport(String moduleStatus, boolean isSuccessful){

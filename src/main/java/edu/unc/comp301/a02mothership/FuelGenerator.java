@@ -36,6 +36,18 @@ public class FuelGenerator extends AModule implements IPowerGenerator {
         return remainingFuel;
     }
 
+    public int generatePower() {
+        if(fuel >= 10){
+            fuel -= 10;
+            return 10;
+        }
+
+        int remainingFuel = fuel;
+        fuel = 0;
+
+        return remainingFuel;
+    }
+
 
     public void statusReport(String moduleStatus, boolean isSuccessful){
         System.out.println("Fuel Generator: " + fuel + " units of fuel remaining.");
